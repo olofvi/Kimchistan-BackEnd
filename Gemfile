@@ -10,6 +10,8 @@ gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rack-cors', require: 'rack/cors'
+gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth',
+                         branch: 'master'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -17,6 +19,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
 
 group :development do
