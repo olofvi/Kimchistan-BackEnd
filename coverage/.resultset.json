@@ -1,0 +1,31 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/amandaallingandren/Projects/Kimchistan-BackEnd/app/models/user.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/amandaallingandren/Projects/Kimchistan-BackEnd/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/amandaallingandren/Projects/Kimchistan-BackEnd/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/amandaallingandren/Projects/Kimchistan-BackEnd/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1510047298
+  }
+}
