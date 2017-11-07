@@ -36,12 +36,12 @@ RSpec.describe 'User Registration', type: :request do
 
     it 'an already registered email' do
       FactoryBot.create(:user, email: 'example@craftacademy.se',
-                        password: 'password',
-                        password_confirmation: 'password')
+      password: 'password',
+      password_confirmation: 'password')
 
       post '/api/v1/auth', params: {
-          email: 'example@craftacademy.se', password: 'password',
-          password_confirmation: 'password'
+      email: 'example@craftacademy.se', password: 'password',
+      password_confirmation: 'password'
       }, headers: headers
 
       expect(response_json['errors']['email']).to eq ['has already been taken']
