@@ -1,5 +1,5 @@
 RSpec.describe 'Sessions', type: :request do
-  let(:user) { FactoryBot.create(:user) }
+  let(:user) { create(:user) }
   let(:headers) { { HTTP_ACCEPT: 'application/json' } }
 
   describe 'POST /api/v1/auth/sign_in' do
@@ -8,13 +8,15 @@ RSpec.describe 'Sessions', type: :request do
           email: user.email, password: user.password
       }, headers: headers
 
-      expected_response = {
-          'data' => {
-              'id' => user.id, 'uid' => user.email, 'email' => user.email,
-              'provider' => 'email', 'name' => nil, 'nickname' => nil,
-              'image' => nil
-          }
-      }
+      expected_response = {"data"=>
+                               {"id"=>user.id,
+                                "email"=>"#{user.email}",
+                                "provider"=>"#{user.provider}",
+                                "uid"=>"#{user.uid}",
+                                "name"=>nil,
+                                "nickname"=>nil,
+                                "image"=>nil,
+                                "type"=>"user"}}
 
       expect(response_json).to eq expected_response
     end
