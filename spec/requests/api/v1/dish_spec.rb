@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::DishesController, type: :request do
   describe 'GET /v1/dishes' do
-    let!(:dish) {FactoryBot.create(:dish, name: 'dumplings', price: 89)}
+    let!(:dish) {FactoryBot.create(:dish, name: 'dumplings', price: 89, description: 'Tasty food', image: 'http://placehold.it/100x100')}
 
     it 'should return dishes' do
       get '/api/v1/dishes'
@@ -13,7 +13,9 @@ RSpec.describe Api::V1::DishesController, type: :request do
                                  "type"=>"dishes",
                                  "attributes"=>
                                      {"name"=>"dumplings",
-                                      "price"=>89}}]}
+                                      "price"=>89,
+                                      "description"=>"Tasty food",
+                                      "image"=>'http://placehold.it/100x100'}}]}
       expect(response_json).to eq expected_response
     end
   end
