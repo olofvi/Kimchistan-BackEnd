@@ -1,6 +1,6 @@
 class Dish < ApplicationRecord
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :price, presence: true
-  validates :image, presence: true
+  validates_presence_of :name
+  validates_presence_of :description
+  validates_presence_of :price
+  validates_presence_of :image
 end
