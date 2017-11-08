@@ -1,6 +1,6 @@
 {"data"=>
      [{"id"=>"#{dish.id}",
-           "type"=>"dishes",
-             "attributes"=>
-                {"name"=>"dumplings",
-                  "price"=>89}}]}
+       "type"=>"dishes",
+       "attributes"=>
+            {"name"=>"dumplings",
+             "price"=>89}}]}
