@@ -4,24 +4,24 @@ RSpec.describe Api::V1::DrinksController, type: :request do
   describe 'GET /v1/drinks' do
     let(:headers) {{HTTP_ACCEPT: 'application/json'}}
 
-    context 'return 1 dish' do
-      let!(:drinks) {create(:drinks, name: 'coca cola', price: 15)}
+    context 'return 1 drink' do
+      let!(:drink) {create(:drink, name: 'coca-cola', price: 15)}
 
       it 'should return drinks' do
         get '/api/v1/drinks'
 
         expect(response.status).to eq 200
-        expected_response = eval(file_fixture('drinks.txt').read)
+        expected_response = eval(file_fixture('drink.txt').read)
         expect(response_json).to eq expected_response.as_json
       end
     end
 
-    context 'return 5 dishes' do
+    context 'return 5 drinks' do
       before do
-        5.times {create(:drinks)}
+        5.times {create(:drink)}
       end
 
-      it 'gets 5 drinkd' do
+      it 'gets 5 drinks' do
         get '/api/v1/drinks'
 
         expect(response_json['data'].count).to eq 5

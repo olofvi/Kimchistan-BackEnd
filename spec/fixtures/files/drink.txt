@@ -1,0 +1,10 @@
+{"data": [
+        {"id": "#{drink.id}",
+            "type": "drinks",
+            "attributes": {
+                "name": "coca-cola",
+                "price": 15
+            }
+        }
+    ]
+}
