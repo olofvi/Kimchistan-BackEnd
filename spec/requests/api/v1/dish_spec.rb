@@ -2,12 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::DishesController, type: :request do
   describe 'GET /v1/dishes' do
-    let(:headers) {{HTTP_ACCEPT: 'application/json'}}
-
     context 'return 1 dish' do
       let!(:dish) {create(:dish, name: 'dumplings', price: 89)}
 
-      it 'should return dishes' do
+      it 'should return a dish' do
         get '/api/v1/dishes'
 
         expect(response.status).to eq 200
