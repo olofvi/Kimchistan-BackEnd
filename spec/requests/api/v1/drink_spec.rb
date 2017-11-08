@@ -2,8 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::DrinksController, type: :request do
   describe 'GET /v1/drinks' do
-    let(:headers) {{HTTP_ACCEPT: 'application/json'}}
-
     context 'return 1 drink' do
       let!(:drink) {create(:drink, name: 'coca-cola', price: 15)}
 
