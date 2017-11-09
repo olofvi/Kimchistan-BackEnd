@@ -1,3 +1,3 @@
-class DishSerializer < ActiveModel::Serializer
+class ProductSerializer < ActiveModel::Serializer
   attributes :id, :name, :price, :description, :image
 end

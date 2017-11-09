@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :dish do
+  factory :product do
     name 'MyString'
     price 1
     image 'Image'
