@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::DishesController, type: :request do
+RSpec.describe Api::V1::ProductsController, type: :request do
   describe 'GET /v1/products' do
     context 'return 1 product' do
       let!(:product) {create(:product, name: 'dumplings', price: 89)}
 
-      it 'should return a dish' do
-        get '/api/v1/dishes'
+      it 'should return a product' do
+        get '/api/v1/products'
 
         expect(response.status).to eq 200
         expected_response = eval(file_fixture('product.txt').read)
@@ -14,13 +14,13 @@ RSpec.describe Api::V1::DishesController, type: :request do
       end
     end
 
-    context 'return 5 dishes' do
+    context 'return 5 products' do
       before do
         5.times {create(:product)}
       end
 
-      it 'gets 5 dishes' do
-        get '/api/v1/product'
+      it 'gets 5 products' do
+        get '/api/v1/products'
 
         expect(response_json['data'].count).to eq 5
       end
