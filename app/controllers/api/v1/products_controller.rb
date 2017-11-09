@@ -1,4 +1,4 @@
-class Api::V1::DishesController < ApplicationController
+class Api::V1::ProductsController < ApplicationController
 
   def index
     dishes = Dish.all
