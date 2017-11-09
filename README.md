@@ -15,17 +15,6 @@ Run bundle install to install dependencies.
 ## Running the tests
 Run rake to see all the tests pass.  
 
-### For acceptance test we use Cucumber.
-It runs automated acceptance tests written in a behavior-driven development (BDD) style. Central to the Cucumber BDD approach is its plain language parser called Gherkin. It allows expected software behaviors to be specified in a logical language that customers can understand.  
-
-Cucumber example:
-```
-Feature: user can see dishes and their info
-  As a user
-  In order to get food
-  I would like to see a list of dishes and info about them
-
-```
 ### For unit tests we use Rspec
 It is a behavior-driven development (BDD) framework which is extensively used in the production applications. The basic idea behind this concept is that of Test Driven Development(TDD) where the tests are written first and the development is based on writing just enough code that will fulfill those tests followed by refactoring.  
 
@@ -70,7 +59,6 @@ We automatically deploy this app with [Heroku](https://www.heroku.com/) through 
 * [Rspec-rails](https://github.com/rspec/rspec-rails)
 * [Shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 * [Factory_Bot_rails](https://github.com/thoughtbot/factory_girl_rails)
-* [Cucumber-rails](https://github.com/cucumber/cucumber-rails)
 * [Coveralls](https://rubygems.org/gems/coveralls/versions/0.8.15)
 * [Database_cleaner](https://github.com/DatabaseCleaner/database_cleaner)
 
