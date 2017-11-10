@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::ProductsController, type: :request do
+RSpec.describe Api::V1::RestaurantsController, type: :request do
   describe 'GET /v1/restaurants' do
     context 'return 1 restaurant' do
       let!(:restaurant) {create(:restaurant, name: 'Kimchistan', address: 'Hötorgsgången', phonenumber:0766333552, hours:'10-19', description:'yummy korean food')}
