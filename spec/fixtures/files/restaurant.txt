@@ -5,4 +5,5 @@
         "address"=>"Hötorgsgången",
         "phonenumber"=>131708778,
         "hours"=>"10-19",
-        "description"=>"yummy korean food"}}]}
+        "description"=>"yummy korean food",
+        "orderhours"=>"10-18:30"}}]}
