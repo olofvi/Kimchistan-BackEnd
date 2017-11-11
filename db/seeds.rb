@@ -9,7 +9,7 @@ if Rails.env == 'development'
   Product.destroy_all
   Ingredient.destroy_all
 
-  ['Chicken', 'Tofu', 'Salmon'].each do |ingredient|
+  ['Chicken', 'Tofu', 'Salmon', 'Tuna'].each do |ingredient|
     Ingredient.create(name: ingredient, price: 25 + rand(10), available: true)
   end
 
