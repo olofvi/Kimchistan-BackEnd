@@ -13,7 +13,7 @@ if Rails.env == 'development'
     Ingredient.create(name: ingredient, price: 25 + rand(10), available: true)
   end
 
-  ['Bibimbap', 'Funchöza', 'Hoe-deopbap', 'kimchi-jjigae', 'Korean tacos'].each do |dish|
+  ['Bibimbap', 'Funchöza', 'Hoe-deopbap', 'Kimchi-jjigae', 'Korean tacos'].each do |dish|
     prod = Product.create(name: dish,
                              price: 89,
                              description: 'Bibimbap, sometimes anglicized as bi bim bap or bi bim bop, is a Korean dish. The word literally means "mixed rice". Bibimbap is served as a bowl of warm white rice topped with namul and gochujang, soy sauce, or doenjang. Pulled beef, kimchi, egg, spinach, and protein of your choice.',
