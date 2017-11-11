@@ -16,7 +16,7 @@ if Rails.env == 'development'
   ['Bibimbap', 'Funchöza', 'Hoe-deopbap', 'kimchi-jjigae', 'Korean tacos'].each do |dish|
     prod = Product.create(name: dish,
                              price: 89,
-                             description: 'Tasty food',
+                             description: 'Bibimbap, sometimes anglicized as bi bim bap or bi bim bop, is a Korean dish. The word literally means "mixed rice". Bibimbap is served as a bowl of warm white rice topped with namul and gochujang, soy sauce, or doenjang. Pulled beef, kimchi, egg, spinach, and protein of your choice.',
                              image: 'http://img.taste.com.au/89rfrNZj/w720-h480-cfill-q80/taste/2016/11/bibimbap-92850-1.jpeg',
                              of_type: 'dish',
                              available: true)
