@@ -5,4 +5,5 @@ class Restaurant < ApplicationRecord
   validates_presence_of :opening_hours
   validates_presence_of :description
   validates_presence_of :order_hours
+  validates_presence_of :email
 end

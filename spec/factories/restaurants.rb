@@ -6,5 +6,6 @@ FactoryBot.define do
     opening_hours '10-19'
     description 'yummy korean food'
     order_hours '10-19'
+    email 'example@example.com'
   end
 end
