@@ -1,0 +1,11 @@
+{"data" =>
+    [{"id"=>"#{restaurant.id}",
+    "type"=>"restaurants",
+    "attributes"=>
+        {"name"=>"Kimchistan",
+        "address"=>"Hötorgsgången",
+        "phonenumber"=>131708778,
+        "description"=>"yummy korean food",
+        "orderhours"=>"10-19",
+        "openinghours"=>"10-19"
+        "email"=>"example@example.com"}}]}
