@@ -1,11 +1,10 @@
 class Api::V1::PaymentsController < ApplicationController
   def create
     @amount = 500
-    binding.pry
 
     customer = Stripe::Customer.create(
-        email: params[:email],
-        source: params[:token]
+        email: payment_params[:email],
+        source: payment_params[:token]
     )
 
     charge = Stripe::Charge.create(
@@ -14,8 +13,13 @@ class Api::V1::PaymentsController < ApplicationController
         description: 'Best kimchistan order',
         currency: 'sek'
     )
-  rescue Stripe::CardError => e
-    # flash[:error] = e.message
-    # redirect_to new_charge_path
+
+    render json: ({charge: charge})
+  end
+
+  private
+
+  def payment_params
+    params[:data][:attributes]
   end
 end
