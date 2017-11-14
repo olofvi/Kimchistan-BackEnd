@@ -2,7 +2,7 @@ class Api::V1::PaymentsController < ApplicationController
 
   def create
     @amount = 500
-    
+
     customer = Stripe::Customer.create(
         email: params[:payment][:data][:email],
         source: params[:payment][:data][:token]
@@ -17,6 +17,9 @@ class Api::V1::PaymentsController < ApplicationController
 
     render json: ({charge: charge})
   end
+
+rescue Stripe::CardError => e
+  flash[:error] = e.message
 
   private
 

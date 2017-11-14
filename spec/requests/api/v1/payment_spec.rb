@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::PaymentsController, type: :request do
+  let(:headers) { { HTTP_ACCEPT: 'payment/json' } }
   describe 'GET /v1/payments' do
     before { StripeMock.start }
     after { StripeMock.stop }
@@ -30,6 +31,35 @@ RSpec.describe Api::V1::PaymentsController, type: :request do
       expect(response.status).to eq 200
     end
 
+    it 'requires a valid card token' do
+      expect {
+        charge = Stripe::Charge.create(
+            amount: 99,
+            currency: 'sek',
+            source: 'bogus_card_token'
+        )
+      }.to raise_error(Stripe::InvalidRequestError)
+    end
+
+    it 'requires a valid customer or source', :live => true do
+      expect {
+        charge = Stripe::Charge.create(
+            amount: 99,
+            currency: 'sek',
+        )
+      }.to raise_error(Stripe::InvalidRequestError)
+    end
+
+    it 'requires presence of amount', :live => true do
+      expect {
+        charge = Stripe::Charge.create(
+            currency: 'sek',
+            source: stripe_helper.generate_card_token
+        )
+      }.to raise_error(Stripe::InvalidRequestError)
+    end
+
+
 
     it 'creates a stripe charge item with a card token' do
       charge = Stripe::Charge.create(
@@ -48,8 +78,8 @@ RSpec.describe Api::V1::PaymentsController, type: :request do
 
     it 'creates a stripe charge item with a customer', :live => true do
       customer = Stripe::Customer.create({
-                                             email: 'johnny@appleseed.com',
-                                             source: stripe_helper.generate_card_token(number: '4012888888881881', address_city: 'LA'),
+                                             email: 'me@me.com',
+                                             source: stripe_helper.generate_card_token(number: '4012888888881881'),
                                              description: 'a description'
                                          })
 
@@ -69,9 +99,9 @@ RSpec.describe Api::V1::PaymentsController, type: :request do
       expect(charge.description).to eq('a charge with a specific customer')
       expect(charge.captured).to eq(true)
       expect(charge.source.last4).to eq('1881')
-      expect(charge.source.address_city).to eq('LA')
     end
   end
 end
+
 
 
