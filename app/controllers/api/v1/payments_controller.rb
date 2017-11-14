@@ -3,19 +3,19 @@ class Api::V1::PaymentsController < ApplicationController
     @amount = 500
 
     customer = Stripe::Customer.create(
-      # binding.pry
         email: params[:stripeEmail],
         source: params[:stripeToken]
     )
 
+    # binding.pry
     charge = Stripe::Charge.create(
         customer: customer.id,
         amount: @amount,
-        description: 'Best Slow Food order',
+        description: 'Best kimchistan order',
         currency: 'sek'
     )
   rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
+    # flash[:error] = e.message
+    # redirect_to new_charge_path
   end
 end

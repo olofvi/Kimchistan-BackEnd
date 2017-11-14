@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::PaymentsController, type: :request do
   describe 'GET /v1/payments' do
     context 'return 1 customer' do
-      # let!(:payment) {create(:payment, stripeEmail: 'example@example.com')}
+      let!(:payment) {create(:payment, stripeEmail: 'example@example.com')}
 
       it 'should return a costumer' do
         get '/api/v1/payments'
