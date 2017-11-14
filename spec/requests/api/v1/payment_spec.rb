@@ -23,9 +23,10 @@ RSpec.describe Api::V1::PaymentsController, type: :request do
         :email => 'me@me.com',
         :card => stripe_helper.generate_card_token
     )}
+
     it 'creates a data entry' do
-      post '/api/v1/payments', params: {
-          payment: {data: {email: 'me@me.com', token: customer.card}}
+      post '/api/v1/payments', params:
+           {data: {attributes: {email: 'me@me.com', token: customer.card}}
       }
 
       expect(response.status).to eq 200
@@ -79,7 +80,7 @@ RSpec.describe Api::V1::PaymentsController, type: :request do
     it 'creates a stripe charge item with a customer', :live => true do
       customer = Stripe::Customer.create({
                                              email: 'me@me.com',
-                                             source: stripe_helper.generate_card_token(number: '4012888888881881'),
+                                             source: stripe_helper.generate_card_token(number: '4012888888881881', address_city: 'LA'),
                                              description: 'a description'
                                          })
 
