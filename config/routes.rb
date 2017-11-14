@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       mount Stripe::Engine => '/stripe'
       resources :products, only: [:index]
       resources :restaurants, only: [:index]
-      resources :payments, only: [:index]
+      resources :payments, only: [:create]
     end
   end
 end

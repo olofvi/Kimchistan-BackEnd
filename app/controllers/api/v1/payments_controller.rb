@@ -1,13 +1,13 @@
 class Api::V1::PaymentsController < ApplicationController
-  def index
+  def create
     @amount = 500
+    binding.pry
 
     customer = Stripe::Customer.create(
-        email: params[:stripeEmail],
-        source: params[:stripeToken]
+        email: params[:email],
+        source: params[:token]
     )
 
-    # binding.pry
     charge = Stripe::Charge.create(
         customer: customer.id,
         amount: @amount,
