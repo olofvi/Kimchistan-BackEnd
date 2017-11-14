@@ -23,6 +23,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'stripe-ruby-mock', '~> 2.5.0', :require => 'stripe_mock'
   gem 'dotenv-rails'
 end
 
