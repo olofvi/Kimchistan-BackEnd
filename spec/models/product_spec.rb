@@ -7,6 +7,8 @@ RSpec.describe Product, type: :model do
     it {is_expected.to have_db_column :price}
     it {is_expected.to have_db_column :of_type}
     it {is_expected.to have_db_column :available}
+    it {is_expected.to have_db_column :daily}
+
   end
 
   describe 'Validations' do
@@ -14,6 +16,7 @@ RSpec.describe Product, type: :model do
     it {is_expected.to validate_presence_of :description}
     it {is_expected.to validate_presence_of :price}
     it {is_expected.to validate_presence_of :of_type}
+    it {is_expected.to validate_presence_of :daily}
     it {is_expected.to validate_inclusion_of(:of_type).in_array(['dish', 'salad', 'drink'])}
   end
 

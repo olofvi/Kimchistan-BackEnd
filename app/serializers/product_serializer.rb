@@ -1,5 +1,5 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :name, :price, :description, :image, :available
+  attributes :id, :name, :price, :description, :image, :available, :daily
   attribute :of_type, key: 'type'
   attribute :ingredients
   def ingredients

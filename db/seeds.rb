@@ -17,7 +17,7 @@ if Rails.env == 'development'
     prod = Product.create(name: dish,
                              price: 89,
                              description: 'Bibimbap, sometimes anglicized as bi bim bap or bi bim bop, is a Korean dish. The word literally means "mixed rice". Bibimbap is served as a bowl of warm white rice topped with namul and gochujang, soy sauce, or doenjang. Pulled beef, kimchi, egg, spinach, and protein of your choice.',
-                             image: 'http://img.taste.com.au/89rfrNZj/w720-h480-cfill-q80/taste/2016/11/bibimbap-92850-1.jpeg',
+                             image: 'http://richtree.com/wp-content/uploads/sites/2/2016/10/IMG_2392.jpg',
                              of_type: 'dish',
                              daily: weekday[0],
                              available: true)
