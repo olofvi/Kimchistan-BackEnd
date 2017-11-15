@@ -1,9 +1,7 @@
 class Api::V1::PaymentsController < ApplicationController
   def create
 
-    binding.pry
-
-    @amount = payment_params[:amount]
+    @amount = payment_params[:amount].to_i
 
     customer = Stripe::Customer.create(
         email: payment_params[:email],

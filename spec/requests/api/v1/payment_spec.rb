@@ -102,6 +102,3 @@ RSpec.describe Api::V1::PaymentsController, type: :request do
     end
   end
 end
-
-
-
