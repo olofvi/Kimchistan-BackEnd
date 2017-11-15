@@ -1,7 +1,8 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, :created_at
-  attribute :dish_name, key: 'dish-name'
-  attribute :dish_quantity, key: 'dish-quantity'
-  attribute :customer_name, key: 'customer-name'
+  attributes :id
+  attribute :created_at, key: 'createdat'
+  attribute :dish_name, key: 'dishname'
+  attribute :dish_quantity, key: 'dishquantity'
+  attribute :customer_name, key: 'customername'
   attribute :delivery
 end
