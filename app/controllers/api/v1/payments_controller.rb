@@ -1,7 +1,7 @@
 class Api::V1::PaymentsController < ApplicationController
   def create
 
-    @amount = params[:amount]
+    @amount = payment_params[:amount]
 
     customer = Stripe::Customer.create(
         email: payment_params[:email],

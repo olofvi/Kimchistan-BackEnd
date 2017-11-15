@@ -26,7 +26,7 @@ RSpec.describe Api::V1::PaymentsController, type: :request do
 
     it 'creates a data entry' do
       post '/api/v1/payments', params:
-           {data: {attributes: {email: 'me@me.com', token: customer.card}}
+           {data: {attributes: {email: 'me@me.com', token: customer.card, amount: 500}}
       }
 
       expect(response.status).to eq 200
