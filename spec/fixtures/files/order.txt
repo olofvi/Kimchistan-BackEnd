@@ -5,7 +5,10 @@
             "type": "orders",
             "attributes": {
                 "created-at": "2017-11-10T09:34:11.608Z",
-                "updated-at": "2017-11-10T09:34:11.608Z"
+                "dish-name": "bibimbap",
+                "dish-quantity": 2,
+                "customer-name": "Thomas Ochman",
+                "delivery": false
             }
         }
     ]
