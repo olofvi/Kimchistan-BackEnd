@@ -6,5 +6,6 @@ FactoryBot.define do
     description 'Description'
     of_type 'dish'
     available true
+    daily_dish_for 0
   end
 end
