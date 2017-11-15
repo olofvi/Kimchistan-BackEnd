@@ -9,6 +9,25 @@ ActiveRecord::Migration.maintain_test_schema!
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
+require 'stripe_mock'
+
+describe KimchistanBackend do
+  let(:stripe_helper) { StripeMock.create_test_helper }
+  before { StripeMock.start }
+  after { StripeMock.stop }
+
+  it "creates a stripe customer" do
+
+    # This doesn't touch stripe's servers nor the internet!
+    # Specify :source in place of :card (with same value) to return customer with source data
+    customer = Stripe::Customer.create({
+                                           email: 'johnny@appleseed.com',
+                                           card: stripe_helper.generate_card_token
+                                       })
+    expect(customer.email).to eq('johnny@appleseed.com')
+  end
+end
+
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
