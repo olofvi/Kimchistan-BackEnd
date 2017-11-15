@@ -8,4 +8,3 @@ class ProductSerializer < ActiveModel::Serializer
     end
   end
 end
-
