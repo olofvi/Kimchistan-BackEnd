@@ -26,6 +26,7 @@ if Rails.env == 'development'
                    description: 'A salad is a dish consisting of a mixture of small pieces of food, usually predominantly vegetables. They are typically served at room temperature or chilled, with notable exceptions such as south German potato salad which is served warm.',
                    available: true,
                    of_type: 'salad',
+                   daily_dish_for: 'never',
                    image: 'http://img.taste.com.au/89rfrNZj/w720-h480-cfill-q80/taste/2016/11/bibimbap-92850-1.jpeg')
   end
 
@@ -34,6 +35,7 @@ if Rails.env == 'development'
                    price: 10,
                    available: true,
                    of_type: 'drink',
+                   daily_dish_for: 'never',
                    description: 'A drink or beverage is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture. Common types of drinks include plain water, milk, juices, coffee, tea, and soft drinks. In addition, alcoholic drinks such as wine, beer, and liquor, which contain the drug ethanol, have been part of human culture and development for 8,000 years.',
                    image: 'https://goo.gl/images/Uh6t7A')
   end
