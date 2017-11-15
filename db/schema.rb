@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20171115103732) do
     t.string "image"
     t.string "of_type", default: "dish"
     t.boolean "available", default: true
-    t.string "daily"
+    t.string "daily_dish_for"
   end
 
   create_table "restaurants", force: :cascade do |t|

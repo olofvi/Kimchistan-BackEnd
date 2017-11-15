@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates_presence_of :price
   validates_presence_of :image
   validates_presence_of :of_type
-  validates_presence_of :daily
+  validates_presence_of :daily_dish_for
   validates_inclusion_of :available, in: [true, false]
   validates_inclusion_of :of_type, in: ['dish', 'salad', 'drink']
 

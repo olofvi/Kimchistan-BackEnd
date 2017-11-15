@@ -7,7 +7,7 @@
             "description"=> "Description",
             "image"=> "Image",
             "available"=> true,
-            "daily"=> "monday",
+            "dailydishfor"=> "0",
             "type"=> "dish",
             "ingredients"=> [{
                 "id"=> product.ingredients.first.id,
