@@ -6,9 +6,9 @@ if Rails.env == 'development'
     Ingredient.create(name: ingredient, price: 25, available: true)
   end
   weekday = [1, 2, 3, 4, 5]
-  ['Bibimbap', 'Funchöza', 'Hoe-deopbap', 'Kimchi-jjigae', 'Korean tacos'].each do |dish|
+  ['Bibimbap', 'Funchöza', 'Hoe-deopbap', 'Kimchi-jjigae'].each do |dish|
     prod = Product.create(name: dish,
-                             price: 89,
+                             price: 99,
                              description: 'Bibimbap, sometimes anglicized as bi bim bap or bi bim bop, is a Korean dish. The word literally means "mixed rice". Bibimbap is served as a bowl of warm white rice topped with namul and gochujang, soy sauce, or doenjang. Pulled beef, kimchi, egg, spinach, and protein of your choice.',
                              image: 'http://richtree.com/wp-content/uploads/sites/2/2016/10/IMG_2392.jpg',
                              of_type: 'dish',
@@ -18,7 +18,19 @@ if Rails.env == 'development'
     weekday.shift
   end
 
+  prod = Product.create(name: 'Korean tacos',
+                        price: 99,
+                        description: 'Bibimbap, sometimes anglicized as bi bim bap or bi bim bop, is a Korean dish. The word literally means "mixed rice". Bibimbap is served as a bowl of warm white rice topped with namul and gochujang, soy sauce, or doenjang. Pulled beef, kimchi, egg, spinach, and protein of your choice.',
+                        image: 'http://richtree.com/wp-content/uploads/sites/2/2016/10/IMG_2392.jpg',
+                        of_type: 'dish',
+                        daily_dish_for: weekday[0],
+                        available: true)
+  weekday.shift
 
+  ['Chicken', 'Tofu', 'Salmon', 'Tuna'].each do |ingredient|
+    ing = Ingredient.create(name: ingredient, price: 0, available: true)
+    prod.ingredients.push ing
+  end
 
   ['Herb Salad', 'Caesar Salad', 'Panzanella', 'Tricolor Salad', 'Yellow Trio'].each do |salad|
     Product.create(name: salad,
