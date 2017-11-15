@@ -10,9 +10,11 @@ gem 'rails', '~> 5.1.4'
 gem 'active_model_serializers', '~> 0.10.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
+gem 'stripe-rails'
 gem 'rack-cors', require: 'rack/cors'
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth',
                          branch: 'master'
+
 
 group :development, :test do
   gem 'pry-byebug'
@@ -21,6 +23,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'stripe-ruby-mock', '~> 2.5.0', :require => 'stripe_mock'
+  gem 'dotenv-rails'
 end
 
 group :development do

@@ -10,9 +10,9 @@ if Rails.env == 'development'
   Ingredient.destroy_all
 
   ['Chicken', 'Tofu', 'Salmon', 'Tuna'].each do |ingredient|
-    Ingredient.create(name: ingredient, price: 25 + rand(10), available: true)
+    Ingredient.create(name: ingredient, price: 25, available: true)
   end
-  weekday = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
+  weekday = [0, 1, 2, 3, 4]
   ['Bibimbap', 'Funchöza', 'Hoe-deopbap', 'Kimchi-jjigae', 'Korean tacos'].each do |dish|
     prod = Product.create(name: dish,
                              price: 89,
@@ -29,7 +29,7 @@ if Rails.env == 'development'
 
   ['Herb Salad', 'Caesar Salad', 'Panzanella', 'Tricolor Salad', 'Yellow Trio'].each do |salad|
     Product.create(name: salad,
-                   price: 55 + rand(20),
+                   price: 55,
                    description: 'A salad is a dish consisting of a mixture of small pieces of food, usually predominantly vegetables. They are typically served at room temperature or chilled, with notable exceptions such as south German potato salad which is served warm.',
                    available: true,
                    of_type: 'salad',
@@ -38,7 +38,7 @@ if Rails.env == 'development'
 
   ['Coca-Cola', 'Fanta', 'Pepsi', 'Loka', 'Green te', 'Black te', 'Mint te', 'Ginger beer', 'Juice', 'Saft'].each do |drink|
     Product.create(name: drink,
-                   price: 10 + rand(10),
+                   price: 10,
                    available: true,
                    of_type: 'drink',
                    description: 'A drink or beverage is a liquid intended for human consumption. In addition to their basic function of satisfying thirst, drinks play important roles in human culture. Common types of drinks include plain water, milk, juices, coffee, tea, and soft drinks. In addition, alcoholic drinks such as wine, beer, and liquor, which contain the drug ethanol, have been part of human culture and development for 8,000 years.',
