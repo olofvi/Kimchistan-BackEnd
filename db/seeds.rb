@@ -12,16 +12,20 @@ if Rails.env == 'development'
   ['Chicken', 'Tofu', 'Salmon', 'Tuna'].each do |ingredient|
     Ingredient.create(name: ingredient, price: 25 + rand(10), available: true)
   end
-
+  weekday = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
   ['Bibimbap', 'Funchöza', 'Hoe-deopbap', 'Kimchi-jjigae', 'Korean tacos'].each do |dish|
     prod = Product.create(name: dish,
                              price: 89,
                              description: 'Bibimbap, sometimes anglicized as bi bim bap or bi bim bop, is a Korean dish. The word literally means "mixed rice". Bibimbap is served as a bowl of warm white rice topped with namul and gochujang, soy sauce, or doenjang. Pulled beef, kimchi, egg, spinach, and protein of your choice.',
                              image: 'http://img.taste.com.au/89rfrNZj/w720-h480-cfill-q80/taste/2016/11/bibimbap-92850-1.jpeg',
                              of_type: 'dish',
+                             daily: weekday[0],
                              available: true)
     prod.ingredients.push Ingredient.all
+    weekday.shift
   end
+
+
 
   ['Herb Salad', 'Caesar Salad', 'Panzanella', 'Tricolor Salad', 'Yellow Trio'].each do |salad|
     Product.create(name: salad,
@@ -29,7 +33,7 @@ if Rails.env == 'development'
                    description: 'A salad is a dish consisting of a mixture of small pieces of food, usually predominantly vegetables. They are typically served at room temperature or chilled, with notable exceptions such as south German potato salad which is served warm.',
                    available: true,
                    of_type: 'salad',
-                   image: 'https://goo.gl/images/HDFTq4')
+                   image: 'http://img.taste.com.au/89rfrNZj/w720-h480-cfill-q80/taste/2016/11/bibimbap-92850-1.jpeg')
   end
 
   ['Coca-Cola', 'Fanta', 'Pepsi', 'Loka', 'Green te', 'Black te', 'Mint te', 'Ginger beer', 'Juice', 'Saft'].each do |drink|
