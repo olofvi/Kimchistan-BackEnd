@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 if Rails.env == 'development'
   Product.destroy_all
   Ingredient.destroy_all
@@ -12,7 +5,7 @@ if Rails.env == 'development'
   ['Chicken', 'Tofu', 'Salmon', 'Tuna'].each do |ingredient|
     Ingredient.create(name: ingredient, price: 25, available: true)
   end
-  weekday = [0, 1, 2, 3, 4]
+  weekday = [1, 2, 3, 4, 5]
   ['Bibimbap', 'Funchöza', 'Hoe-deopbap', 'Kimchi-jjigae', 'Korean tacos'].each do |dish|
     prod = Product.create(name: dish,
                              price: 89,
