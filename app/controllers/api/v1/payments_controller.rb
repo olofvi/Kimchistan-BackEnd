@@ -15,7 +15,10 @@ class Api::V1::PaymentsController < ApplicationController
         currency: 'sek'
     )
 
-    render json: ({charge: charge})
+    render json: {charge: charge}
+
+  rescue => error
+    render json: {error: error.message}, status: 400
   end
 
   private
@@ -24,3 +27,4 @@ class Api::V1::PaymentsController < ApplicationController
     params[:data][:attributes]
   end
 end
+
